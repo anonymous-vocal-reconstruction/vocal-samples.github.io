@@ -1,56 +1,39 @@
-	<!DOCTYPE html>
-	<html lang="" xml:lang="" xmlns="http://www.w3.org/1999/xhtml">
-	 <head>
-	  <meta charset="utf-8"/>
-	  <meta content="width=device-width, initial-scale=1" name="viewport"/>
-	  <title>
-	  A Differentiable Simulator for Human Vocal Learning
-	  </title>
-	  <meta content="A Differentiable Simulator for Human Vocal Learning" property="og:title"/>
-	  <style type="text/css">
-	   :root {
-		--small-thumb-border-radius: 2px;
-		--larger-thumb-border-radius: 3px;
-	}
+<!DOCTYPE html>
+<html lang="" xml:lang="" xmlns="http://www.w3.org/1999/xhtml">
 
-	html {
-	  font-size: 14px;
-	  line-height: 1.6;
-	  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-	  text-size-adjust: 100%;
-	  -ms-text-size-adjust: 100%;
-	  -webkit-text-size-adjust: 100%;
-	}
+<head>
+	<meta charset="utf-8" />
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+	<title>
+		A Differentiable Simulator for Human Vocal Learning
+	</title>
+	<meta content="A Differentiable Simulator for Human Vocal Learning" property="og:title" />
+	<style type="text/css">
+		:root {
+			--small-thumb-border-radius: 2px;
+			--larger-thumb-border-radius: 3px;
+		}
 
-	@media(min-width: 768px) {
-	  html {
-		font-size: 16px;
-	  }
-	}
+		html {
+			font-size: 14px;
+			line-height: 1.6;
+			font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+			text-size-adjust: 100%;
+			-ms-text-size-adjust: 100%;
+			-webkit-text-size-adjust: 100%;
+		}
 
-	body {
-		margin: 0px;
-		padding: 0px;
-	}
+		@media(min-width: 768px) {
+			html {
+				font-size: 16px;
+			}
+		}
 
-	.base-grid,
-	.n-header,
-	.n-byline,
-	.n-title,
-	.n-article,
-	.n-footer {
-		display: grid;
-		justify-items: stretch;
-		grid-template-columns: [screen-start] 8px [page-start kicker-start text-start gutter-start middle-start] 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr [text-end page-end gutter-end kicker-end middle-end] 8px [screen-end];
-		grid-column-gap: 8px;
-	}
+		body {
+			margin: 0px;
+			padding: 0px;
+		}
 
-	.grid {
-	  display: grid;
-	  grid-column-gap: 8px;
-	}
-
-	@media(min-width: 768px) {
 		.base-grid,
 		.n-header,
 		.n-byline,
@@ -59,545 +42,545 @@
 		.n-footer {
 			display: grid;
 			justify-items: stretch;
-			grid-template-columns: [screen-start] 1fr [page-start kicker-start middle-start text-start] 45px 45px 45px 45px 45px 45px 45px 45px [ kicker-end text-end gutter-start] 45px [middle-end] 45px [page-end gutter-end] 1fr [screen-end];
-			grid-column-gap: 16px;
+			grid-template-columns: [screen-start] 8px [page-start kicker-start text-start gutter-start middle-start] 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr [text-end page-end gutter-end kicker-end middle-end] 8px [screen-end];
+			grid-column-gap: 8px;
 		}
 
 		.grid {
-			grid-column-gap: 16px;
-		}
-	}
-
-	@media(min-width: 1000px) {
-		.base-grid,
-		.n-header,
-		.n-byline,
-		.n-title,
-		.n-article,
-		.n-footer {
 			display: grid;
-			justify-items: stretch;
-			grid-template-columns: [screen-start] 1fr [page-start kicker-start] 50px [middle-start] 50px [text-start kicker-end] 50px 50px 50px 50px 50px 50px 50px 50px [text-end gutter-start] 50px [middle-end] 50px [page-end gutter-end] 1fr [screen-end];
-			grid-column-gap: 16px;
+			grid-column-gap: 8px;
 		}
 
-		.grid {
-			grid-column-gap: 16px;
-		}
-	}
+		@media(min-width: 768px) {
 
-	@media (min-width: 1180px) {
-		.base-grid,
-		.n-header,
-		.n-byline,
-		.n-title,
-		.n-article,
+			.base-grid,
+			.n-header,
+			.n-byline,
+			.n-title,
+			.n-article,
+			.n-footer {
+				display: grid;
+				justify-items: stretch;
+				grid-template-columns: [screen-start] 1fr [page-start kicker-start middle-start text-start] 45px 45px 45px 45px 45px 45px 45px 45px [ kicker-end text-end gutter-start] 45px [middle-end] 45px [page-end gutter-end] 1fr [screen-end];
+				grid-column-gap: 16px;
+			}
+
+			.grid {
+				grid-column-gap: 16px;
+			}
+		}
+
+		@media(min-width: 1000px) {
+
+			.base-grid,
+			.n-header,
+			.n-byline,
+			.n-title,
+			.n-article,
+			.n-footer {
+				display: grid;
+				justify-items: stretch;
+				grid-template-columns: [screen-start] 1fr [page-start kicker-start] 50px [middle-start] 50px [text-start kicker-end] 50px 50px 50px 50px 50px 50px 50px 50px [text-end gutter-start] 50px [middle-end] 50px [page-end gutter-end] 1fr [screen-end];
+				grid-column-gap: 16px;
+			}
+
+			.grid {
+				grid-column-gap: 16px;
+			}
+		}
+
+		@media (min-width: 1180px) {
+
+			.base-grid,
+			.n-header,
+			.n-byline,
+			.n-title,
+			.n-article,
+			.n-footer {
+				display: grid;
+				justify-items: stretch;
+				grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+				grid-column-gap: 32px;
+			}
+
+			.grid {
+				grid-column-gap: 32px;
+			}
+		}
+
+		@media (min-width: 1500px) {
+
+			.base-grid,
+			.n-header,
+			.n-byline,
+			.n-title,
+			.n-article,
+			.n-footer {
+				display: grid;
+				justify-items: stretch;
+				grid-template-columns: [screen-start] 1fr [page-start kicker-start] 70px [middle-start] 70px [text-start kicker-end] 70px 70px 70px 70px 70px 70px 70px 70px [text-end gutter-start] 70px [middle-end] 70px [page-end gutter-end] 1fr [screen-end];
+				grid-column-gap: 48px;
+			}
+
+			.grid {
+				grid-column-gap: 48px;
+			}
+		}
+
+		.base-grid {
+			grid-column: screen;
+		}
+
+		/* default grid column assignments */
+		.n-title>* {
+			grid-column: text;
+		}
+
+		.n-article>* {
+			grid-column: text;
+		}
+
+		.n-header {
+			height: 0px;
+		}
+
 		.n-footer {
-			display: grid;
-			justify-items: stretch;
-			grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
-			grid-column-gap: 32px;
+			height: 60px;
 		}
-		.grid {
-			grid-column-gap: 32px;
+
+		.n-title {
+			padding: 4rem 0 1.5rem;
 		}
-	}
 
-	@media (min-width: 1500px) {
-		.base-grid,
-		.n-header,
-		.n-byline,
-		.n-title,
-		.n-article,
-		.n-footer {
-			display: grid;
-			justify-items: stretch;
-			grid-template-columns: [screen-start] 1fr [page-start kicker-start] 70px [middle-start] 70px [text-start kicker-end] 70px 70px 70px 70px 70px 70px 70px 70px [text-end gutter-start] 70px [middle-end] 70px [page-end gutter-end] 1fr [screen-end];
-			grid-column-gap: 48px;
+		.l-page {
+			grid-column: page;
 		}
-		.grid {
-			grid-column-gap: 48px;
+
+		.l-article {
+			grid-column: text;
 		}
-	}
 
-	.base-grid {
-	  grid-column: screen;
-	}
+		p {
+			margin-top: 0;
+			margin-bottom: 1em;
+		}
 
-	/* default grid column assignments */
-	.n-title > *  {
-	  grid-column: text;
-	}
+		.pixelated {
+			image-rendering: pixelated;
+		}
 
-	.n-article > *  {
-	  grid-column: text;
-	}
+		strong {
+			font-weight: 600;
+		}
 
-	.n-header {
-		height: 0px;
-	}
-
-	.n-footer {
-		height: 60px;
-	}
-
-	.n-title {
-		padding: 4rem 0 1.5rem;
-	}
-
-	.l-page {
-		grid-column: page;
-	}
-
-	.l-article {
-		grid-column: text;
-	}
-
-	p {
-	  margin-top: 0;
-	  margin-bottom: 1em;
-	}
-
-	.pixelated {
-		image-rendering: pixelated;
-	}
-
-	strong {
-		font-weight: 600;
-	}
-
-	/*------------------------------------------------------------------*/
-	/* title */
-	.n-title h1 {
-		font-family: "Barlow",system-ui,Arial,sans-serif;
-		color:#082333;
-		grid-column: text;
-		font-size: 30px;
-		font-weight: 700;
-		line-height: 1.1em;
-		margin: 0 0 0.5rem;
-		text-align: center;
-	}
-
-	@media (min-width: 768px) {
+		/*------------------------------------------------------------------*/
+		/* title */
 		.n-title h1 {
-			font-size: 40px;
+			font-family: "Barlow", system-ui, Arial, sans-serif;
+			color: #082333;
+			grid-column: text;
+			font-size: 30px;
+			font-weight: 700;
+			line-height: 1.1em;
+			margin: 0 0 0.5rem;
+			text-align: center;
 		}
-	}
 
-	/*------------------------------------------------------------------*/
-	/* article */
-	.n-article {
-		color: rgb(33, 40, 53);
-		border-top: 1px solid rgba(0, 0, 0, 0.1);
-		padding-top: 2rem;
-		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-		padding-bottom: 2rem;
-	}
+		@media (min-width: 768px) {
+			.n-title h1 {
+				font-size: 40px;
+			}
+		}
 
-	.n-article h2 {
-		contain: layout style;
-		font-weight: 600;
-		font-size: 24px;
-		line-height: 1.25em;
-		margin: 2rem 0 1.5rem 0;
-		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-		padding-bottom: 1rem;
-	}
-
-	@media (min-width: 768px) {
+		/*------------------------------------------------------------------*/
+		/* article */
 		.n-article {
-			line-height: 1.7;
+			color: rgb(33, 40, 53);
+			border-top: 1px solid rgba(0, 0, 0, 0.1);
+			padding-top: 2rem;
+			border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+			padding-bottom: 2rem;
 		}
 
 		.n-article h2 {
-			font-size: 36px;
+			contain: layout style;
+			font-weight: 600;
+			font-size: 24px;
+			line-height: 1.25em;
+			margin: 2rem 0 1.5rem 0;
+			border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+			padding-bottom: 1rem;
 		}
-	}
 
-	/*------------------------------------------------------------------*/
-	/* byline */
+		@media (min-width: 768px) {
+			.n-article {
+				line-height: 1.7;
+			}
 
-	.n-byline {
-	  contain: style;
-	  overflow: hidden;
-	  border-top: 1px solid rgba(0, 0, 0, 0.1);
-	  font-size: 0.8rem;
-	  line-height: 1.8em;
-	  padding: 1.5rem 0;
-	  min-height: 1.8em;
-	}
+			.n-article h2 {
+				font-size: 36px;
+			}
+		}
 
-	.n-byline .byline {
-	  grid-column: text;
-	}
+		/*------------------------------------------------------------------*/
+		/* byline */
 
-	.byline {
-		grid-template-columns: 1fr 1fr 1fr 1fr;
-	}
+		.n-byline {
+			contain: style;
+			overflow: hidden;
+			border-top: 1px solid rgba(0, 0, 0, 0.1);
+			font-size: 0.8rem;
+			line-height: 1.8em;
+			padding: 1.5rem 0;
+			min-height: 1.8em;
+		}
 
-	.grid {
-		display: grid;
-		grid-column-gap: 8px;
-	}
+		.n-byline .byline {
+			grid-column: text;
+		}
 
-	@media (min-width: 768px) {
-	.grid {
-		grid-column-gap: 16px;
-	}
-	}
+		.byline {
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+		}
 
-	.n-byline p {
-	  margin: 0;
-	}
+		.grid {
+			display: grid;
+			grid-column-gap: 8px;
+		}
 
-	.n-byline h3 {
-		font-size: 0.6rem;
-		font-weight: 400;
-		color: rgba(0, 0, 0, 0.5);
-		margin: 0;
-		text-transform: uppercase;
-	}
-	.n-byline .authors-affiliations {
-	  grid-column-end: span 2;
-	  grid-template-columns: 1fr 1fr;
-	}
+		@media (min-width: 768px) {
+			.grid {
+				grid-column-gap: 16px;
+			}
+		}
 
-	/*------------------------------------------------------------------*/
-	/* figures */
-	.figure {
-		margin-top: 1.5rem;
-		margin-bottom: 1rem;
-	}
+		.n-byline p {
+			margin: 0;
+		}
 
-	figcaption, .figcaption {
-		color: rgba(0, 0, 0, 0.6);
-		font-size: 12px;
-		line-height: 1.5em;
-	}
+		.n-byline h3 {
+			font-size: 0.6rem;
+			font-weight: 400;
+			color: rgba(0, 0, 0, 0.5);
+			margin: 0;
+			text-transform: uppercase;
+		}
 
-	ul.authors {
-		list-style-type: none;
-		padding: 0;
-		margin: 0;
-		text-align: center;
-	}
-	ul.authors li {
-		padding: 0 0.5rem;
-		display: inline-block;
-	}
+		.n-byline .authors-affiliations {
+			grid-column-end: span 2;
+			grid-template-columns: 1fr 1fr;
+		}
 
-	ul.authors sup {
-		color: rgb(126,126,126);
-	}
+		/*------------------------------------------------------------------*/
+		/* figures */
+		.figure {
+			margin-top: 1.5rem;
+			margin-bottom: 1rem;
+		}
 
-	ul.authors.affiliations  {
-		margin-top: 0.5rem;
-	}
+		figcaption,
+		.figcaption {
+			color: rgba(0, 0, 0, 0.6);
+			font-size: 12px;
+			line-height: 1.5em;
+		}
 
-	ul.authors.affiliations li {
-		color: rgb(126,126,126);
-	}
+		ul.authors {
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+			text-align: center;
+		}
 
-	img.dropshadow {
-		box-shadow: 0 1px 10px rgba(0,0,0, 0.3);
-	}
+		ul.authors li {
+			padding: 0 0.5rem;
+			display: inline-block;
+		}
 
-	/* video caption */
+		ul.authors sup {
+			color: rgb(126, 126, 126);
+		}
 
-	.video {
-		margin-top: 1.5rem;
-		margin-bottom: 1.5rem;
-	}
-	.videotop {
-		margin-top: 1.5rem;
-	}
-	.videobottom {
-		margin-bottom: 1.5rem;
-	}
+		ul.authors.affiliations {
+			margin-top: 0.5rem;
+		}
 
-	.videocaption {
-		display: flex;
-		font-size: 16px;
-		line-height: 1.5em;
-		margin-bottom: 1rem;
-		justify-content: center;
-	}
-	   .disable-selection {
-			 user-select: none;
-		-moz-user-select: none; /* Firefox */
-		 -ms-user-select: none; /* Internet Explorer */
-	  -khtml-user-select: none; /* KHTML browsers (e.g. Konqueror) */
-	 -webkit-user-select: none; /* Chrome, Safari, and Opera */
-	 -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
-	}
+		ul.authors.affiliations li {
+			color: rgb(126, 126, 126);
+		}
 
-	.hidden {
-		display: none;
-	}
+		img.dropshadow {
+			box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+		}
 
-	h3.figtitle {
-		margin-top: 0;
-		margin-bottom: 0;
-	}
+		/* video caption */
 
-	.fig-title-line {
-		grid-template-columns: 2fr 0.75fr;
-	}
+		.video {
+			margin-top: 1.5rem;
+			margin-bottom: 1.5rem;
+		}
 
-	.fig-thumb-image-row {
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 1fr;
-	}
+		.videotop {
+			margin-top: 1.5rem;
+		}
 
-	.fig-thumb-image-row-item {
-		width: 100%;
-		min-height: auto;
-		border-radius: var(--small-thumb-border-radius);
-	}
+		.videobottom {
+			margin-bottom: 1.5rem;
+		}
 
-	.fig-dataset-button {
-		border-color: rgba(0,0,0,0);
-		border-width: 1px;
-		border-style: solid;
-		cursor: pointer;
-		opacity: 0.6;
-	}
+		.videocaption {
+			display: flex;
+			font-size: 16px;
+			line-height: 1.5em;
+			margin-bottom: 1rem;
+			justify-content: center;
+		}
 
-	.fig-dataset-button.active {
-		border-color: rgba(0,0,0,0.7);
-		border-width: 1px;
-		border-style: solid;
-		opacity: 1.0;
-	}
+		.disable-selection {
+			user-select: none;
+			-moz-user-select: none;
+			/* Firefox */
+			-ms-user-select: none;
+			/* Internet Explorer */
+			-khtml-user-select: none;
+			/* KHTML browsers (e.g. Konqueror) */
+			-webkit-user-select: none;
+			/* Chrome, Safari, and Opera */
+			-webkit-touch-callout: none;
+			/* Disable Android and iOS callouts*/
+		}
 
-	.grid {
-		display: grid;
-		grid-column-gap: 8px;
-	}
+		.hidden {
+			display: none;
+		}
 
-	.fig-3-image-row {
-		margin-top: 1em;
-		grid-template-columns: 1fr 1.3fr 1fr;
-		grid-template-rows: 1fr;
-	}
+		h3.figtitle {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
 
-	.fig-3-image-item {
-		justify-self: center;
-		align-self: center;
-		width: 100%;
-		border-radius: var(--larger-thumb-border-radius);
-	}
+		.fig-title-line {
+			grid-template-columns: 2fr 0.75fr;
+		}
 
-	/*---------------------------------------------------------------------*/
-	.fig-slider {
-		grid-template-columns: auto 2fr;
-		grid-template-rows: 1fr;
-		margin-top: 1em;
-		align-items: start;
-		justify-content: center;
-	}
+		.fig-thumb-image-row {
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 1fr;
+		}
 
-	.fig-slider img.play_button {
-		margin-right: 8px;
-		cursor: pointer;
-		justify-self: center;
-	}
-	.fig-slider svg {
-		touch-action: none;
-	}
+		.fig-thumb-image-row-item {
+			width: 100%;
+			min-height: auto;
+			border-radius: var(--small-thumb-border-radius);
+		}
 
-	.fig-preload {
-		display: none;
-	}
-	/*---------------------------------------------------------------------*/
-	  </style>
-	  <!-- inline stylesheet files into the above <style> element -->
-	  <link href="https://fonts.googleapis.com/css?family=Montserrat|Segoe+UI" rel="stylesheet"/>
-	 </head>
-	 <body>
-	  <div class="n-header">
-	  </div>
-	  <div class="n-title">
-	   <h1>
-	   A Differentiable Simulator for Human Vocal Learning
-	   </h1>
-	   <h2 id="videos"><center>
-		Supplemental Videos
-	   </center></h2>
-	  </div>
-	  <div class="n-article">
+		.fig-dataset-button {
+			border-color: rgba(0, 0, 0, 0);
+			border-width: 1px;
+			border-style: solid;
+			cursor: pointer;
+			opacity: 0.6;
+		}
+
+		.fig-dataset-button.active {
+			border-color: rgba(0, 0, 0, 0.7);
+			border-width: 1px;
+			border-style: solid;
+			opacity: 1.0;
+		}
+
+		.grid {
+			display: grid;
+			grid-column-gap: 8px;
+		}
+
+		.fig-3-image-row {
+			margin-top: 1em;
+			grid-template-columns: 1fr 1.3fr 1fr;
+			grid-template-rows: 1fr;
+		}
+
+		.fig-3-image-item {
+			justify-self: center;
+			align-self: center;
+			width: 100%;
+			border-radius: var(--larger-thumb-border-radius);
+		}
+
+		/*---------------------------------------------------------------------*/
+		.fig-slider {
+			grid-template-columns: auto 2fr;
+			grid-template-rows: 1fr;
+			margin-top: 1em;
+			align-items: start;
+			justify-content: center;
+		}
+
+		.fig-slider img.play_button {
+			margin-right: 8px;
+			cursor: pointer;
+			justify-self: center;
+		}
+
+		.fig-slider svg {
+			touch-action: none;
+		}
+
+		.fig-preload {
+			display: none;
+		}
+
+		/*---------------------------------------------------------------------*/
+	</style>
+	<!-- inline stylesheet files into the above <style> element -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat|Segoe+UI" rel="stylesheet" />
+</head>
+
+<body>
+	<div class="n-header">
+	</div>
+	<div class="n-title">
+		<h1>
+			A Differentiable Simulator for Human Vocal Learning
+		</h1>
+		<h2 id="videos">
+			<center>
+				Supplemental Videos
+			</center>
+		</h2>
+	</div>
+	<div class="n-article">
 
 
-	  <div class="l-page videotop" style="display: flex; margin-bottom: 1rem">
-       <div style="width: 49.5%; margin: 0px; padding: 0px">
-		<video controls="" width="100%">
-		 <source src="valley_input.mp4#t=0.001" type="video/mp4"/>
-		</video>
-		<div class="videocaption">
-		 <div>
-		  <strong>
-		   Video 1a (Singing Synthesis):
-		  </strong>
-		 </div>
+		<div class="l-page videotop" style="display: flex; margin-bottom: 1rem">
+			<div style="width: 49.5%; margin: 0px; padding: 0px">
+				<video controls="" width="100%">
+					<source src="de_1mp4.mp4" type="video/mp4" />
+				</video>
+				<div class="videocaption">
+					<div>
+						<strong>
+							Video 1 (German):
+						</strong>
+						Vocal tract surface area reconstruction and resynthesis of "Hallo. Das ist ein Test."
+						English: Hello. This is a test. Reference: <a href="
+							hallo_das_ist_ein_test.mp3">hallo_das_ist_ein_test.mp3</a>. SR: 16000 Hz
+					</div>
+				</div>
+			</div>
+			<div style="width: 0.98%; margin: 0px; padding: 0px">
+			</div>
+			<div style="width: 49.5%; margin: 0px; padding: 0px">
+				<video controls="" loop="" width="100%">
+					<source src="OMG_Cover.mp4" type="video/mp4" />
+				</video>
+				<div class="videocaption">
+					<div>
+						<strong>
+							Video 2 (Korean and English Singing):
+						</strong>
+						Vocal tract surface area reconstruction and resynthesis of the song "OMG" by New Jeans.
+						Romanization: "E noraeneun it's about you baby. Only you. You, you, you, you, you, you, you."
+						Reference: <a href="
+							https://www.youtube.com/watch?v=BH1o66wl8qE">YouTube</a> SR: 44100 Hz.
+					</div>
+				</div>
+			</div>
 		</div>
-	   </div><div style="width: 0.98%; margin: 0px; padding: 0px">
-	   </div><div style="width: 49.5%; margin: 0px; padding: 0px">
-		<video controls="" loop="" width="100%">
-		 <source src="valley_year1.mp4#t=0.001" type="video/mp4"/>
-		</video>
-		<div class="videocaption">
-		 <div>
-		  <strong>
-		   Video 1b (Singing Synthesis):
-		  </strong>
-		 </div>
+		<div class="l-page" style="margin-bottom: 1rem">
+			<hr style="width:100%;height:1.5px;border-width:0;color:black;background-color:gray">
 		</div>
-	   </div>
-	  </div>
-		  <div class="l-page" style="margin-bottom: 1rem">
-			  <hr style="width:100%;height:1.5px;border-width:0;color:black;background-color:gray">
-		  </div>
 
-	  <div class="l-page videobottom" style="display: flex">
-       <div style="width: 49.5%; margin: 0px; padding: 0px">
-		<video controls="" loop="" width="100%">
-		 <source src="valley_year2.mp4#t=0.001" type="video/mp4"/>
-		</video>
-		<div class="videocaption">
-		 <div>
-		  <strong>
-		   Video 2a (Tongue Twister):
-		  </strong>
+		<div class="l-page videobottom" style="display: flex">
+			<div style="width: 49.5%; margin: 0px; padding: 0px">
+				<video controls="" loop="" width="100%">
+					<source src="umbrella_1.mp4" type="video/mp4" />
+				</video>
+				<div class="videocaption">
+					<div>
+						<strong>
+							Video 3 (English): </strong>
+						Vocal tract surface area reconstruction and resynthesis of "a woman holding an umbrella walks
+						past". Reference: <a href="
+								umbrella_tgt.wav">umbrella.wav</a> SR: 16000 Hz.
 
-		 </div>
+
+
+					</div>
+				</div>
+			</div>
+			<div style="width: 0.98%; margin: 0px; padding: 0px">
+			</div>
+			<div style="width: 49.5%; margin: 0px; padding: 0px">
+				<video controls="" width="100%">
+					<source src="zh_cn_1_mel.mp4" type="video/mp4" />
+				</video>
+				<div class="videocaption">
+					<div>
+						<strong>
+							Video 4 (Chinese): </strong> Vocal tract surface area reconstruction and resynthesis of
+						"今天天气真好".
+						Pinyin: jīn tiān tiān qì zhēn hǎo.
+						English: Today the weather is good.
+						Reference: <a href="today_weather_so_good_zh.wav">today_weather_so_good_zh.wav</a> SR: 16000 Hz.
+
+					</div>
+				</div>
+			</div>
 		</div>
-	   </div><div style="width: 0.98%; margin: 0px; padding: 0px">
-       </div><div style="width: 49.5%; margin: 0px; padding: 0px">
-		<video controls="" width="100%">
-		 <source src="valley_day.mp4#t=0.001" type="video/mp4"/>
-		</video>
-		<div class="videocaption">
-		 <div>
-		  <strong>
-		   Video 2b (Tongue Twister):
-		  </strong>
-		 </div>
+
+		<div class="l-page videotop" style="display: flex">
+			<div style="width: 49.5%; margin: 0px; padding: 0px">
+				<video controls="" width="100%">
+					<source src="trucks_mri_recon.mp4" type="video/mp4" />
+				</video>
+				<div class="videocaption">
+					<div>
+						<strong>
+							Video 5 (English MRI):
+						</strong>
+
+						"Trucks lined up behind..."
+
+						Reference: <a href="
+							trucks_tgt.wav">trucks_tgt.wav</a> SR: 16000 Hz.
+						<br>
+						Because our simulator is fully differentiable, we can backpropagate the area function through a
+						GAN trained on vocal MRI data to synthesize dynamic vocal tract movements. However, the sound
+						quality is lower than backpropagating through only an area function. This is because the GAN is
+						trained on only 75 speakers, and the MRI data is noisy and low resolution.
+
+
+
+					</div>
+				</div>
+			</div>
+			<div style="width: 0.98%; margin: 0px; padding: 0px">
+			</div>
+			<div style="width: 49.5%; margin: 0px; padding: 0px">
+				<video controls="" width="100%">
+					<source src="hello_world_mri_output.mp4" type="video/mp4" />
+				</video>
+				<div class="videocaption">
+					<div>
+						<strong>
+							Video 6 (English MRI):
+						</strong>
+						"Hello world."
+						Reference: <a href="
+							hello_world.wav">hello_world.wav</a> SR: 16000 Hz.
+					</div>
+				</div>
+			</div>
 		</div>
-	   </div>
-	  </div>
 
-	  <div class="l-page videotop" style="display: flex">
-       <div style="width: 49.5%; margin: 0px; padding: 0px">
-		<video controls="" width="100%">
-		 <source src="growing_input.mp4#t=0.001" type="video/mp4"/>
-		</video>
-		<div class="videocaption">
-		 <div>
-		  <strong>
-		   Video 2c (Tongue Twister):
-		  </strong>
-		 </div>
+
+
+
+		<div class="n-footer">
+			<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;
 		</div>
-	   </div><div style="width: 0.98%; margin: 0px; padding: 0px">
-       </div><div style="width: 49.5%; margin: 0px; padding: 0px">
-		<video controls="" width="100%">
-		 <source src="growing_walk.mp4#t=0.001" type="video/mp4"/>
-		</video>
-		<div class="videocaption">
-		 <div>
-		  <strong>
-		   Video 2d (Tongue Twister):
-		  </strong>
-		 </div>
-		</div>
-	   </div>
-	  </div>
-		  <div class="l-page" style="margin-bottom: 1rem">
-			  <hr style="width:100%;height:1.5px;border-width:0;color:black;background-color:gray">
-		  </div>
-	  <div class="l-page videobottom" style="display: flex">
-       <div style="width: 49.5%; margin: 0px; padding: 0px">
-		<video controls="" width="100%">
-		 <source src="growing_mb.mp4#t=0.001" type="video/mp4"/>
-		</video>
-		<div class="videocaption">
-		 <div>
-		  <strong>
-		   Video 3a (LibriTTS-R):
-		  </strong>
-		 </div>
-		</div>
-	   </div><div style="width: 0.98%; margin: 0px; padding: 0px">
-       </div><div style="width: 49.5%; margin: 0px; padding: 0px">
-		<video controls="" width="100%">
-		 <source src="growing_our.mp4#t=0.001" type="video/mp4"/>
-		</video>
-		<div class="videocaption">
-		 <div>
-		  <strong>
-		   Video 3b (LibriTTS-R):
-		  </strong>
-		 </div>
-		</div>
-	   </div>
-      </div>
+	</div>
+</body>
 
-	  <div class="l-page" style="margin-bottom: 1rem">
-	   <hr style="width:100%;height:1.5px;border-width:0;color:black;background-color:gray">
-	  </div>
-
-	   <div class="l-article video">
-		<video controls="" width="100%">
-		 <source src="muotathal_hfr.mp4#t=0.001" type="video/mp4"/>
-		</video>
-		<div class="videocaption">
-		 <div>
-		  <strong>
-		   Video 3c (LibriTTS-R):
-		  </strong>
-
-		 </div>
-		</div>
-	   </div>
-
-	  <div class="l-page" style="margin-bottom: 1rem">
-	   <hr style="width:100%;height:1.5px;border-width:0;color:black;background-color:gray">
-	  </div>
-
-	  <div class="l-page videotop" style="display: flex">
-       <div style="width: 48.4898%; margin: 0px; padding: 0px">
-		<video controls="" width="100%">
-		 <source src="muotathal_lerp.mp4#t=0.001" type="video/mp4"/>
-		</video>
-       </div><div style="width: 0.98%; margin: 0px; padding: 0px">
-       </div><div style="width: 50.5102%; margin: 0px; padding: 0px">
-		<video controls="" width="100%">
-		 <source src="frankfurt_lerp.mp4#t=0.001" type="video/mp4"/>
-		</video>
-	   </div>
-	  </div>
-	  <div class="l-page videobottom">
-		<div class="videocaption">
-		 <div>
-		  <strong>
-		   Videos 4a:
-		  </strong>
-
-		  </div>
-		</div>
-	   </div>
-	   
-	  <div class="l-page" style="margin-bottom: 1rem">
-	   <hr style="width:100%;height:1.5px;border-width:0;color:black;background-color:gray">
-	  </div>
-
-
-
-
-		  <div class="n-footer">
-	  <br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;
-	  </div>
-	  </div>
-	 </body>
-	</html>
+</html>
